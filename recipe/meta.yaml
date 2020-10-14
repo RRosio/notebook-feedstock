@@ -22,6 +22,7 @@ requirements:
     - python
     - pip
   run:
+    - argon2-cffi
     - ipykernel
     - ipython_genutils
     - jinja2
