@@ -15,7 +15,7 @@ build:
     - jupyter-nbextension = notebook.nbextensions:main
     - jupyter-serverextension = notebook.serverextensions:main
     - jupyter-bundlerextension = notebook.bundler.bundlerextensions:main
-  skip: true  # [py<36]
+  skip: true  # [py<37]
 
 requirements:
   host:
@@ -64,6 +64,7 @@ test:
     - jupyter bundlerextension -h
   imports:
     - notebook
+    - notebook.tests.launchnotebook
 
 about:
   home: https://jupyter.org
