@@ -56,6 +56,7 @@ app:
 test:
   requires:
     - pip
+    - requests
   commands:
     - python -m pip check
     - jupyter notebook -h
