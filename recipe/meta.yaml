@@ -1,4 +1,4 @@
-{% set version = "6.4.3" %}
+{% set version = "6.4.5" %}
 
 package:
   name: notebook
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/n/notebook/notebook-{{ version }}.tar.gz
-  sha256: e6b6dfed36b00cf950f63c0d42e947c101d4258aec21624de62b9e0c11ed5c0d
+  sha256: 872e20da9ae518bbcac3e4e0092d5bd35454e847dedb8cb9739e9f3b68406be0
 
 build:
   number: 0
@@ -15,7 +15,7 @@ build:
     - jupyter-nbextension = notebook.nbextensions:main
     - jupyter-serverextension = notebook.serverextensions:main
     - jupyter-bundlerextension = notebook.bundler.bundlerextensions:main
-  skip: true  # [py<36]
+  skip: true  # [py<37]
 
 requirements:
   host:
@@ -56,6 +56,7 @@ app:
 test:
   requires:
     - pip
+    - requests
   commands:
     - python -m pip check
     - jupyter notebook -h
@@ -64,6 +65,7 @@ test:
     - jupyter bundlerextension -h
   imports:
     - notebook
+    - notebook.tests.launchnotebook
 
 about:
   home: https://jupyter.org
