@@ -25,7 +25,7 @@ requirements:
     - wheel
     - jupyter-packaging >=0.9
   run:
-    - python
+    - python >=3.7
     - argon2-cffi
     - ipykernel
     - ipython_genutils
