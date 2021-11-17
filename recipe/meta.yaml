@@ -34,12 +34,13 @@ requirements:
     - jupyter_client >=5.3.4
     - nbconvert
     - nbformat
+    - nest-asyncio >=1.5
+    - prometheus_client
     - pyzmq >=17
-    - send2trash >=1.5.0
+    - send2trash >=1.8.0
     - terminado >=0.8.3
     - tornado >=6.1
     - traitlets >=4.2.1
-    - prometheus_client
 
 app:
   entry: jupyter-notebook  # [not osx]
