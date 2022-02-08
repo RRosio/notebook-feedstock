@@ -44,7 +44,7 @@ requirements:
     - traitlets >=4.2.1
 
 app:
-  entry: jupyter-notebook  # [not osx]
+  entry: jupyter-notebook                        # [not osx]
   entry: open ${PREFIX}/bin/jupyter_mac.command  # [osx]
   icon: jupyter.png
   summary: Jupyter Notebook
