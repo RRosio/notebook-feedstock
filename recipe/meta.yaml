@@ -1,11 +1,12 @@
+{% set name = "notebook" %}
 {% set version = "6.4.8" %}
 
 package:
-  name: notebook
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/n/notebook/notebook-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/notebook-{{ version }}.tar.gz
   sha256: 1e985c9dc6f678bdfffb9dc657306b5469bfa62d73e03f74e8defbf76d284312
 
 build:
@@ -15,7 +16,7 @@ build:
     - jupyter-nbextension = notebook.nbextensions:main
     - jupyter-serverextension = notebook.serverextensions:main
     - jupyter-bundlerextension = notebook.bundler.bundlerextensions:main
-  skip: true  # [py<37]
+  skip: true  # [py<36]
 
 requirements:
   host:
@@ -23,9 +24,9 @@ requirements:
     - pip
     - setuptools
     - wheel
-    - jupyter-packaging >=0.9
+    - jupyter-packaging >=0.9,<1.0
   run:
-    - python >=3.7
+    - python >=3.6
     - argon2-cffi
     - ipykernel
     - ipython_genutils
