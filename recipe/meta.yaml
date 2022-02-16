@@ -1,12 +1,13 @@
-{% set version = "6.4.6" %}
+{% set name = "notebook" %}
+{% set version = "6.4.8" %}
 
 package:
-  name: notebook
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/n/notebook/notebook-{{ version }}.tar.gz
-  sha256: 7bcdf79bd1cda534735bd9830d2cbedab4ee34d8fe1df6e7b946b3aab0902ba3
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/notebook-{{ version }}.tar.gz
+  sha256: 1e985c9dc6f678bdfffb9dc657306b5469bfa62d73e03f74e8defbf76d284312
 
 build:
   number: 0
@@ -15,23 +16,23 @@ build:
     - jupyter-nbextension = notebook.nbextensions:main
     - jupyter-serverextension = notebook.serverextensions:main
     - jupyter-bundlerextension = notebook.bundler.bundlerextensions:main
-  skip: true  # [py<37]
+  skip: true  # [py<36]
 
 requirements:
   host:
     - python
+    - jupyter-packaging >=0.9,<1.0
     - pip
     - setuptools
     - wheel
-    - jupyter-packaging >=0.9
   run:
-    - python >=3.7
+    - python
     - argon2-cffi
     - ipykernel
     - ipython_genutils
     - jinja2
-    - jupyter_core >=4.6.1
     - jupyter_client >=5.3.4
+    - jupyter_core >=4.6.1
     - nbconvert
     - nbformat
     - nest-asyncio >=1.5
@@ -43,7 +44,7 @@ requirements:
     - traitlets >=4.2.1
 
 app:
-  entry: jupyter-notebook  # [not osx]
+  entry: jupyter-notebook                        # [not osx]
   entry: open ${PREFIX}/bin/jupyter_mac.command  # [osx]
   icon: jupyter.png
   summary: Jupyter Notebook
