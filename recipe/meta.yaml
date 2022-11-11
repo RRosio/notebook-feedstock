@@ -79,6 +79,8 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: A web-based notebook environment for interactive computing
+  description: |
+    The Jupyter notebook is a web-based notebook environment for interactive computing.
   dev_url: https://github.com/jupyter/notebook
   doc_url: https://jupyter-notebook.readthedocs.io
 
