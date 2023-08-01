@@ -10,7 +10,7 @@ source:
   sha256: 517209568bd47261e2def27a140e97d49070602eea0d226a696f42a7f16c9a4e
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   entry_points:
     - jupyter-notebook = notebook.notebookapp:main
