@@ -10,7 +10,7 @@ source:
   sha256: 517209568bd47261e2def27a140e97d49070602eea0d226a696f42a7f16c9a4e
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   entry_points:
     - jupyter-notebook = notebook.notebookapp:main
@@ -32,14 +32,14 @@ requirements:
     - ipykernel
     - ipython_genutils
     - jinja2
-    - jupyter_client >=5.3.4
+    - jupyter_client >=5.3.4,<8
     - jupyter_core >=4.6.1
     - nbclassic >=0.4.7
     - nbconvert >=5
     - nbformat
     - nest-asyncio >=1.5
     - prometheus_client
-    - pyzmq >=17
+    - pyzmq >=17,<25
     - send2trash >=1.8.0
     - terminado >=0.8.3
     - tornado >=6.1
